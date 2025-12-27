@@ -73,7 +73,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors duration-500" dir="rtl">
+    <div className="relative w-full h-screen overflow-hidden flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors duration-500" dir="rtl" style={{ overscrollBehaviorY: 'none' }}>
       
       {/* Background Stars (Static CSS effect for depth) */}
       <div className={`absolute inset-0 z-0 pointer-events-none transition-opacity duration-500 ${isDarkMode ? 'opacity-40' : 'opacity-10'}`}
@@ -189,6 +189,7 @@ const App: React.FC = () => {
       <InfoPanel 
         node={selectedNode} 
         onClose={handleClosePanel} 
+        onNodeSelect={handleNodeClick}
       />
       
     </div>

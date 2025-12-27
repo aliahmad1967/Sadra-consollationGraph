@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
 // Safely initialize the AI client only if the key exists
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
@@ -29,23 +29,29 @@ const MOCK_EXPLANATIONS: Record<string, string> = {
   "الحركة الجوهرية (Al-Harakah al-Jawhariyyah)": `**الحركة الجوهرية** تعني أن التغير لا يطال فقط صفات الشيء (لونه، مكانه)، بل يضرب في عمق ذاته وجوهره.
   
 العالم المادي عند صدرا ليس ساكناً، بل هو في حالة "سيلان" وتجدد مستمر في كل لحظة. هذه الحركة هي طريق تكامل الموجودات، فالنفس البشرية مثلاً تنشأ جسمانية وتتكامل عبر الحركة الجوهرية لتصبح روحانية.`,
-  
+
   "وحدة العاقل والمعقول": `نظرية **وحدة العاقل والمعقول** تؤكد أن النفس حين تدرك شيئاً، فإنها لا تلتقط "صورة" له وتخزنها كالخزانة، بل **تتحد** النفس مع تلك المعلومة وجودياً.
   
-كلما اكتسب الإنسان علماً، اشتدت درجة وجود نفسه وتكاملت. فالعلم هو نمو وجودي للنفس وليس مجرد إضافة خارجية.`
+كلما اكتسب الإنسان علماً، اشتدت درجة وجود نفسه وتكاملت. فالعلم هو نمو وجودي للنفس وليس مجرد إضافة خارجية.`,
 };
 
-export const explainConcept = async (conceptLabel: string, context?: string): Promise<string> => {
+export const explainConcept = async (
+  conceptLabel: string,
+  context?: string
+): Promise<string> => {
   // If no API key is available, use Mock Mode (Demo)
   if (!ai) {
     console.warn("Gemini API Key missing. Using Mock Mode.");
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate thinking delay
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate thinking delay
+
     // Check if we have a canned response
     if (MOCK_EXPLANATIONS[conceptLabel]) {
-      return MOCK_EXPLANATIONS[conceptLabel] + "\n\n*(تم توليد هذا الشرح من الأرشيف لعدم توفر مفتاح API)*";
+      return (
+        MOCK_EXPLANATIONS[conceptLabel] +
+        "\n\n*(تم توليد هذا الشرح من الأرشيف لعدم توفر مفتاح API)*"
+      );
     }
-    
+
     // Generic fallback
     return `**شرح تجريبي (محاكاة):**
     
@@ -60,7 +66,7 @@ export const explainConcept = async (conceptLabel: string, context?: string): Pr
     You are an expert in Islamic Philosophy, specifically Transcendental Theosophy (Al-Hikma al-Muta'aliyah) by Mulla Sadra.
     
     Please explain the concept of "${conceptLabel}" clearly and concisely.
-    ${context ? `Context: This is related to ${context}.` : ''}
+    ${context ? `Context: This is related to ${context}.` : ""}
     
     The explanation should be in Arabic, suitable for a philosophy student. 
     Keep it under 150 words.
@@ -69,7 +75,7 @@ export const explainConcept = async (conceptLabel: string, context?: string): Pr
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: "gemini-2.5-flash",
       contents: prompt,
     });
     return response.text || "لم أتمكن من استرجاع شرح في الوقت الحالي.";
@@ -77,7 +83,10 @@ export const explainConcept = async (conceptLabel: string, context?: string): Pr
     console.error("Gemini API Error:", error);
     // Fallback to mock if the API call fails (e.g. quota exceeded or invalid key)
     if (MOCK_EXPLANATIONS[conceptLabel]) {
-       return MOCK_EXPLANATIONS[conceptLabel] + "\n\n*(حدث خطأ في الاتصال، تم عرض نسخة أرشيفية)*";
+      return (
+        MOCK_EXPLANATIONS[conceptLabel] +
+        "\n\n*(حدث خطأ في الاتصال، تم عرض نسخة أرشيفية)*"
+      );
     }
     return "حدث خطأ أثناء الاتصال بخدمة الذكاء الاصطناعي. يرجى المحاولة لاحقاً.";
   }
