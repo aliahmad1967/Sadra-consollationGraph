@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتاب الإمام الخميني: مدرسة القيادة الإلهية | الشيخ حسن قاسم النحوي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #b7791f;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 15% 50%, rgba(183, 121, 31, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 650px;
+            text-align: justify;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.2);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(183, 121, 31, 0.2);
+            margin-right: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .book-mockup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 3D Book Mockup container */
+        .book-container {
+            perspective: 1000px;
+            display: inline-block;
+        }
+
+        .book-mockup-img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 4px 12px 12px 4px;
+            box-shadow: -12px 15px 25px rgba(0, 0, 0, 0.25),
+                1px 1px 3px rgba(255, 255, 255, 0.2) inset;
+            transform: rotateY(-10deg) rotateX(6deg);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            background-color: #eaeaea;
+        }
+
+        .book-mockup-img:hover {
+            transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+            box-shadow: -5px 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* General Section Layout */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About the Author */
+        .author-section {
+            background-color: var(--bg-white);
+        }
+
+        .author-grid {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .author-img-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .author-avatar-img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            border: 6px solid var(--bg-light);
+            transition: transform 0.3s ease;
+            background-color: #eaeaea;
+        }
+
+        .author-avatar-img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Core Summary */
+        .summary-section {
+            background-color: var(--bg-light);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .summary-card {
+            background-color: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .summary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(26, 54, 93, 0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .summary-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .summary-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        /* Key Takeaways */
+        .takeaways-section {
+            background-color: var(--bg-white);
+        }
+
+        .takeaways-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .takeaway-item {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 35px;
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .takeaway-item:hover {
+            background-color: #edf2f7;
+        }
+
+        .takeaway-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--secondary-color);
+            line-height: 1;
+            min-width: 40px;
+        }
+
+        .takeaway-text h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .takeaway-text p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background-color: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-white);
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: "“";
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 5rem;
+            color: rgba(183, 121, 31, 0.08);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-style: italic;
+            text-align: justify;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar-placeholder {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .author-info h4 {
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .author-info p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Action CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a365d 0%, #0f2340 100%);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #11243f;
+            color: #718096;
+            padding: 30px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Placeholder styles while loading */
+        .image-loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-loading::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: placeholder-glow 1.5s infinite;
+        }
+
+        @keyframes placeholder-glow {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+
+            .book-mockup {
+                order: -1;
+            }
+
+            .author-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .author-content p {
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        /* Floating contact text card (no call) */
+        .contact-card {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1200;
+            background: linear-gradient(135deg, #b7791f 0%, #d49b4a 100%);
+            color: var(--bg-white);
+            padding: 14px 18px;
+            border-radius: 12px;
+            display: inline-block;
+            text-align: right;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            font-weight: 700;
+            line-height: 1.1;
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+            min-width: 160px;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+        }
+
+        .contact-card .small {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.95;
+        }
+
+        .contact-card .number {
+            display: block;
+            font-size: 1rem;
+            margin: 6px 0;
+            font-weight: 900;
+        }
+
+        .contact-card .name {
+            display: block;
+            font-size: 0.92rem;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 576px) {
+            .contact-card {
+                left: 12px;
+                bottom: 12px;
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">مدرسة <span>القيادة</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#author">المؤلف</a></li>
+                <li><a href="#summary">خلاصة الكتاب</a></li>
+                <li><a href="#takeaways">أبرز المحاور</a></li>
+            </ul>
+            <a href="https://t.me/Nahwy/6411" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">تحميل الكتاب</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>الإمام الخميني: مدرسة القيادة الإلهية</h1>
+                <h2>من ثورة القرن العشرين إلى نهضة القرن الحادي والعشرين</h2>
+                <p>قراءة فكرية وتحليلية معمقة تتجاوز حدود الجغرافيا والتاريخ، لتستعرض معالم النظرية القيادية عند الإمام
+                    الخميني، وتأصيلها كمنهج عابر للأجيال، واستمرارية هذا المشروع الفكري والسياسي كركيزة أساسية في تشكيل
+                    هوية ووعي الأمة المعاصرة ومحور المقاومة.</p>
+                <a href="https://t.me/Nahwy/6411" class="btn btn-secondary">احصل على نسختك الآن</a>
+                <a href="#summary" class="btn"
+                    style="background-color: transparent; color: var(--primary-color); border-color: var(--primary-color);">اكتشف
+                    المزيد</a>
+            </div>
+            <div class="book-mockup">
+                <div class="book-container parallax-container">
+                    <a href="https://t.me/Nahwy/6411" target="_blank" rel="noopener noreferrer" title="تحميل الكتاب">
+                        <img id="book-cover-img" src="bookImam.jpg" alt="غلاف كتاب الإمام الخميني مدرسة القيادة الإلهية"
+                            class="book-mockup-img image-loading">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Author Section -->
+    <section id="author" class="author-section">
+        <div class="container">
+            <div class="section-title">مؤلف الكتاب</div>
+            <div class="section-subtitle">شخصية فكرية تبحث في أبعاد القيادة والتأصيل المعرفي للأمة</div>
+            <div class="author-grid">
+                <div class="author-img-container">
+                    <a href="profileAuthor.jpg" target="_blank" rel="noopener noreferrer" title="عرض الصورة">
+                        <img id="author-photo-img" src="profileAuthor.jpg" alt="حسن النحوي"
+                            class="author-avatar-img image-loading">
+                    </a>
+                </div>
+                <div class="author-content">
+                    <div class="author-tag">باحث ومؤلف إسلامي</div>
+                    <h3>الشيخ حسن قاسم النحوي</h3>
+                    <p>باحث ومفكر إسلامي يعنى بدراسة المناهج القيادية والفكر السياسي الإسلامي المعاصر. ينصب اهتمامه
+                        البحثي على قراءة التحولات الإستراتيجية في المنطقة وتأثير الحركات الفكرية والنهضوية في صياغة وعي
+                        الأجيال الحالية والقادمة.</p>
+                    <p>في إصداره الجديد هذا والمطبوع في بيروت (الطبعة الأولى ١٤٤٧هـ / ٢٠٢٦م)، يقدم الشيخ النحوي رؤية
+                        نقدية توثيقية ترسم أبعاد الانتقال التاريخي من «الخميني» الشخص إلى «الخمينية» كنهج وثقافة ممتدة،
+                        مهدياً هذا العمل القيّم إلى شهداء طوفان الأقصى.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Summary Section -->
+    <section id="summary" class="summary-section">
+        <div class="container">
+            <div class="section-title">الخلاصة الجوهرية للكتاب</div>
+            <div class="section-subtitle">إطلالة شاملة على الهيكل الفكري الموزع عبر فصول الكتاب لتقديم أطروحة نهضوية
+                متكاملة</div>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-icon">٠١</div>
+                    <h3>مأسسة النهج وتحويله إلى ثقافة</h3>
+                    <p>يستعرض الكتاب بتعمق الانتقال المفصلي والمحوري من "الخميني" كشخصية قيادية تاريخية كاريزمية، إلى
+                        "الخمينية" كنهج ممتد، وجهاز فكري وثقافي مستمر لا ينفك عن احتياجات الأمة المتجددة، ليكون معياراً
+                        فكرياً وأخلاقياً ثابتاً للمسار السياسي والتربوي.</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">٠٢</div>
+                    <h3>فلسفة المستضعفين كأساس كوني</h3>
+                    <p>يقدم الكتاب قراءة في الفلسفة الأخلاقية والسياسية التي أسسها الإمام تجاه الفئات المستضعفة في
+                        العالم، وكيف تحولت هذه الفلسفة من مجرد تنظير ديني إلى قاعدة واقعية صلبة انطلقت منها حركات التحرر
+                        والمقاومة الإقليمية والعالمية.</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">٠٣</div>
+                    <h3>امتداد المشروع في الساحة الإقليمية</h3>
+                    <p>يسلط الكاتب الضوء على القراءة غير الإيرانية لفكر الإمام، مفرداً مساحات تحليلية دقيقة لدراسة
+                        تجليات هذا الفكر وتطبيقاته وتأثيره المباشر في ساحات فاعلة ومحورية مثل: لبنان، العراق، البحرين،
+                        واليمن، ومستقبل تجديد الروح الثورية فيها.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways Section -->
+    <section id="takeaways" class="takeaways-section">
+        <div class="container">
+            <div class="section-title">أبرز ما ستخرج به من قراءتك</div>
+            <div class="section-subtitle">دروس معرفية وإستراتيجية يقدمها الكتاب تساهم في فهم الراهن وتأطير المستقبل
+            </div>
+            <div class="takeaways-wrapper">
+                <div class="takeaway-item">
+                    <div class="takeaway-number">١</div>
+                    <div class="takeaway-text">
+                        <h3>فهم ثقافة التكليف كركيزة للمقاومة</h3>
+                        <p>توضيح مفهوم "ثقافة التكليف" كأصل عقدي وإستراتيجي، وكيف يمثل هذا المفهوم حجر الزاوية والأساس
+                            المتين لوحدة ساحات المقاومة وتكامل أدوارها في مواجهة التحديات الكبرى.</p>
+                    </div>
+                </div>
+                <div class="takeaway-item">
+                    <div class="takeaway-number">٢</div>
+                    <div class="takeaway-text">
+                        <h3>مركزية فلسطين في الخطاب القيادي</h3>
+                        <p>تأصيل الحضور الإستراتيجي والعقائدي للقضية الفلسطينية في مدرسة الإمام الخميني، وبيان كيف تحولت
+                            قضية القدس وفلسطين من ملف سياسي عابر إلى المحور الثابت الذي تلتقي حوله الأمة.</p>
+                    </div>
+                </div>
+                <div class="takeaway-item">
+                    <div class="takeaway-number">٣</div>
+                    <div class="takeaway-text">
+                        <h3>شمولية المشروع النهضوي</h3>
+                        <p>إدراك أهمية صياغة مشروع شامل لا يقتصر على السياسة فحسب، بل يمتد ليعالج قضايا الهوية الأصيلة،
+                            السيادة المعرفية، والتحرر الاقتصادي كشرط أساسي للاستقلال الحقيقي.</p>
+                    </div>
+                </div>
+                <div class="takeaway-item">
+                    <div class="takeaway-number">٤</div>
+                    <div class="takeaway-text">
+                        <h3>تشكيل وعي أجيال ما بعد الثورة</h3>
+                        <p>تحليل الآليات الفكرية والتربوية والإعلامية التي تضمن استمرارية الحضور العاطفي والمعرفي للإمام
+                            رغم تعاقب الأجيال وتبدل الأدوات والوسائل التقنية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials removed by user request -->
+
+    <!-- Call to Action Section -->
+    <section id="download" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>ابدأ رحلتك المعرفية المعمقة اليوم</h2>
+                <p>النسخة الإلكترونية الكاملة من كتاب "الإمام الخميني: مدرسة القيادة الإلهية" متوفرة الآن مجاناً
+                    للباحثين والمطالعين بقسمات عالية الجودة.</p>
+                <a href="https://t.me/Nahwy/6411" class="btn btn-secondary"
+                    style="font-size: 1.2rem; padding: 16px 45px;">تحميل النسخة الإلكترونية (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>جميع الحقوق محفوظة © ٢٠٢٦ | كتاب الإمام الخميني: مدرسة القيادة الإلهية</p>
+            <p>الطبعة الأولى - بيروت، لبنان ١٤٤٧هـ / ٢٠٢٦م</p>
+
+            <!-- Floating contact text card (no call) -->
+            <div class="contact-card" role="note" aria-label="معلومات الاتصال لأبو أحمد" title="اطلب من أبو أحمد">
+                <span class="small">يطلب من</span>
+                <span class="number">07722552402</span>
+                <span class="name">أبو أحمد</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            // Inject effect styles
+            const css = `
+            .image-appear { opacity: 0; transform: translateY(20px) scale(0.995); transition: opacity 700ms ease, transform 700ms ease; }
+            .image-appear.visible { opacity: 1; transform: translateY(0) scale(1); }
+            @keyframes floatY { 0% { transform: translateY(0); } 50% { transform: translateY(-6px); } 100% { transform: translateY(0); } }
+            .float-once.visible { animation: floatY 6s ease-in-out infinite; }
+            .parallax-container { will-change: transform; transform-style: preserve-3d; }
+            .book-mockup-img { backface-visibility: hidden; will-change: transform; transform-origin: center center; }
+            @media (max-width: 992px) {
+                .parallax-container { transform: none !important; }
+                .book-mockup-img { transform: none !important; animation: none !important; }
+            }
+            `;
+            const s = document.createElement('style'); s.appendChild(document.createTextNode(css)); document.head.appendChild(s);
+
+            // Image reveal + loading handling
+            const imgs = ['book-cover-img', 'author-photo-img']
+                .map(id => document.getElementById(id))
+                .filter(Boolean);
+
+            imgs.forEach(img => {
+                img.classList.add('image-appear');
+                img.addEventListener('load', () => img.classList.remove('image-loading'));
+                if (img.complete) img.classList.remove('image-loading');
+            });
+
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            el.classList.add('visible');
+                            if (el.id === 'book-cover-img') el.classList.add('float-once');
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                imgs.forEach(img => io.observe(img));
+            } else {
+                imgs.forEach(img => img.classList.add('visible'));
+            }
+
+            // Parallax effect for the book container (separate transform so it doesn't conflict with image transform)
+            const parallaxEl = document.querySelector('.parallax-container');
+            if (parallaxEl) {
+                let ticking = false;
+                const speed = 0.06; // reduced parallax intensity for subtler effect
+                const maxOffset = 40; // max px to translate to avoid large jumps
+
+                function updateParallax() {
+                    const rect = parallaxEl.getBoundingClientRect();
+                    const vh = window.innerHeight || document.documentElement.clientHeight;
+                    const centerOffset = (rect.top + rect.height / 2) - (vh / 2);
+                    let translateY = -centerOffset * speed;
+                    // clamp to avoid extreme values
+                    translateY = Math.max(Math.min(translateY, maxOffset), -maxOffset);
+                    // use translate3d for hardware acceleration
+                    parallaxEl.style.transform = `translate3d(0, ${translateY}px, 0)`;
+                }
+
+                function onScroll() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            updateParallax();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }
+
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', updateParallax);
+                window.addEventListener('load', updateParallax);
+                // initial position
+                updateParallax();
+            }
+        })();
+    </script>
+</body>
+
+</html>
